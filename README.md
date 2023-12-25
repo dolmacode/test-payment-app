@@ -12,9 +12,9 @@
 > 
 > curl -X POST http://localhost/purchase \ \
 > -d "product=3" \ \
-> -d "taxNumber=FR12312313123123" \ \
+> -d "taxNumber=BI12312313123123" \ \
 > -d "couponCode=A20" \ \
-> -d "paymentProcessor=example_payment_processor"
+> -d "paymentProcessor=paypal"
 
 
 > **GET** /countries
