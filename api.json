@@ -1,0 +1,90 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Инструкция по использованию API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/calculate-price": {
+      "post": {
+        "summary": "Расчёт цены",
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "product": { "type": "integer" },
+                  "taxNumber": { "type": "string" },
+                  "couponCode": { "type": "string" }
+                },
+                "required": ["product", "taxNumber"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/purchase": {
+      "post": {
+        "summary": "Покупка товара",
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "product": { "type": "integer" },
+                  "taxNumber": { "type": "string" },
+                  "couponCode": { "type": "string" },
+                  "paymentProcessor": { "type": "string" }
+                },
+                "required": ["product", "taxNumber", "paymentProcessor"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/countries": {
+      "get": {
+        "summary": "Получить список стран в системе",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/catalog": {
+      "get": {
+        "summary": "Получить каталог товаров",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/product/{product_id}": {
+      "get": {
+        "summary": "Получить информацию о товаре",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  }
+}
